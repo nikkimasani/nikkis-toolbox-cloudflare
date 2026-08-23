@@ -6,7 +6,7 @@ const out = join(root, 'cloudflare-dist');
 const excluded = new Set([
   '.git', '.github', '.gitignore', '.vercel', '.vercelignore',
   'api', 'functions', 'scripts', 'cloudflare-dist',
-  'wrangler.jsonc', 'vercel.json', 'package-lock.json', 'node_modules',
+  '_worker.js', 'wrangler.jsonc', 'vercel.json', 'package-lock.json', 'node_modules',
 ]);
 
 await rm(out, { recursive: true, force: true });

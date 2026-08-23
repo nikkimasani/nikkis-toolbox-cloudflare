@@ -7,7 +7,7 @@
 // replace url with the exact verified production URL when necessary.
 window.NIKKI_CLOUDFLARE_APPS = {
   tradelab: { name: "Nikki's TradeLab", project: "tradelab-cloudflare", type: "pages", plannedUrl: "https://tradelab-cloudflare.pages.dev", url: null, verified: false },
-  booknook: { name: "The Book Nook", project: "reader-hub-cloudflare", type: "pages+r2", plannedUrl: "https://reader-hub-cloudflare.pages.dev", url: null, verified: false },
+  booknook: { name: "The Book Nook", project: "reader-hub-cloudflare", type: "pages+r2", plannedUrl: "https://reader-hub-cloudflare.pages.dev", url: "https://reader-hub-cloudflare.pages.dev", verified: true },
   pmp: { name: "PMP Boot Camp", project: "pmp-boot-camp-cloudflare", type: "pages", plannedUrl: "https://pmp-boot-camp-cloudflare.pages.dev", url: null, verified: false },
   slaterun: { name: "SlateRun Sports Hub", project: "slaterun-cloudflare", type: "pages", plannedUrl: "https://slaterun-cloudflare.pages.dev", url: null, verified: false },
   craftclub: { name: "Dabble", project: "dabble-cloudflare", type: "pages", plannedUrl: "https://dabble-cloudflare.pages.dev", url: null, verified: false },
@@ -46,6 +46,8 @@ window.NIKKI_CLOUDFLARE_APPS = {
     } else {
       card.dataset.cloudflarePending = 'true';
       if (app.plannedUrl) card.dataset.cloudflarePlannedUrl = app.plannedUrl;
+      card.removeAttribute('href');
+      card.setAttribute('aria-disabled', 'true');
       card.setAttribute('aria-label', `${app.name} Cloudflare deployment pending live verification`);
     }
   }
