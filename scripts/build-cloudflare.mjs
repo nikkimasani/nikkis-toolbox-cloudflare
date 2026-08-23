@@ -19,7 +19,7 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
 
 const indexPath = join(out, 'index.html');
 let html = await readFile(indexPath, 'utf8');
-const cloudflareScript = '<script src="/cloudflare-apps.js"></script>';
+const cloudflareScript = '<script src="/cloudflare-apps.js?v=20260823-direct-links"></script>';
 if (!html.includes(cloudflareScript)) {
   html = html.replace('</body>', `${cloudflareScript}\n</body>`);
   await writeFile(indexPath, html, 'utf8');

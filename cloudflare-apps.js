@@ -41,6 +41,9 @@ window.NIKKI_CLOUDFLARE_APPS = {
     card.dataset.hosting = 'cloudflare';
     if (app.verified && app.url) {
       card.href = app.url;
+      card.dataset.open = 'newtab';
+      card.target = '_blank';
+      card.rel = 'noopener';
       card.dataset.cloudflareUrl = app.url;
       delete card.dataset.cloudflarePending;
     } else {
