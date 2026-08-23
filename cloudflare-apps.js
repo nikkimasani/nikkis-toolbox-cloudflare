@@ -18,7 +18,7 @@ window.NIKKI_CLOUDFLARE_APPS = {
   statvault: { name: "StatVault", project: "statvault-cloudflare", type: "pages-functions", plannedUrl: "https://statvault-cloudflare.pages.dev", url: null, verified: false },
   bodycompass: { name: "Body Compass", project: "body-compass-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
   makeitpretty: { name: "Make It Pretty", project: "make-it-pretty-cloudflare", type: "pages+python-worker", plannedUrl: "https://make-it-pretty-cloudflare.pages.dev", url: null, verified: false },
-  projectmanager: { name: "Nikki Project Manager", project: "nikki-project-manager-cloudflare", type: "pages", plannedUrl: "https://nikki-project-manager-cloudflare.pages.dev", url: null, verified: false },
+  projectmanager: { name: "Nikki Project Manager", project: "nikki-project-manager-cloudflare", type: "pages", plannedUrl: "https://nikki-project-manager-cloudflare.pages.dev", url: "https://nikki-project-manager-cloudflare.pages.dev", verified: true },
   ocode: { name: "OCode", project: "ocode-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
   picommand: { name: "Pi Command Center", project: "pi-command-center-cloudflare", type: "pages", plannedUrl: "https://pi-command-center-cloudflare.pages.dev", url: "https://pi-command-center-cloudflare.pages.dev", verified: true },
   hobonichi: { name: "Hobonichi Planner", project: "hobonichi-planner-cloudflare", type: "pages", plannedUrl: "https://hobonichi-planner-cloudflare.pages.dev", url: "https://hobonichi-planner-cloudflare.pages.dev", verified: true },
