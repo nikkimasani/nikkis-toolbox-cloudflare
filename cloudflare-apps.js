@@ -14,7 +14,7 @@ window.NIKKI_CLOUDFLARE_APPS = {
   pmcopilot: { name: "PM Copilot", project: "pm-copilot-cloudflare", type: "pages", plannedUrl: "https://pm-copilot-cloudflare.pages.dev", url: "https://pm-copilot-cloudflare.pages.dev", verified: true },
   lifecommand: { name: "Life OS", project: "life-os-cloudflare", type: "pages", plannedUrl: "https://life-os-cloudflare.pages.dev", url: "https://life-os-cloudflare.pages.dev", verified: true },
   careerarsenal: { name: "Career Arsenal", project: "career-arsenal-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
-  drawyourfont: { name: "Draw Your Font", project: "draw-your-font-cloudflare", type: "pages", plannedUrl: "https://draw-your-font-cloudflare.pages.dev", url: null, verified: false },
+  drawyourfont: { name: "Draw Your Font", project: "draw-your-font-cloudflare", type: "pages", plannedUrl: "https://draw-your-font-cloudflare.pages.dev", url: "https://draw-your-font-cloudflare.pages.dev", verified: true },
   statvault: { name: "StatVault", project: "statvault-cloudflare", type: "pages-functions", plannedUrl: "https://statvault-cloudflare.pages.dev", url: null, verified: false },
   bodycompass: { name: "Body Compass", project: "body-compass-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
   makeitpretty: { name: "Make It Pretty", project: "make-it-pretty-cloudflare", type: "pages+python-worker", plannedUrl: "https://make-it-pretty-cloudflare.pages.dev", url: null, verified: false },
