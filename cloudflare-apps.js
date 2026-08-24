@@ -16,10 +16,10 @@ window.NIKKI_CLOUDFLARE_APPS = {
   careerarsenal: { name: "Career Arsenal", project: "career-arsenal-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
   drawyourfont: { name: "Draw Your Font", project: "draw-your-font-cloudflare", type: "pages", plannedUrl: "https://draw-your-font-cloudflare.pages.dev", url: "https://draw-your-font-cloudflare.pages.dev", verified: true },
   statvault: { name: "StatVault", project: "statvault-cloudflare", type: "pages-functions", plannedUrl: "https://statvault-cloudflare.pages.dev", url: "https://statvault-cloudflare.pages.dev", verified: true },
-  bodycompass: { name: "Body Compass", project: "body-compass-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
+  bodycompass: { name: "Body Compass", project: "body-compass-cloudflare", type: "workers-opennext", plannedUrl: "https://body-compass-cloudflare.nikkimasani.workers.dev", url: "https://body-compass-cloudflare.nikkimasani.workers.dev", verified: true },
   makeitpretty: { name: "Make It Pretty", project: "make-it-pretty-cloudflare", type: "pages+python-worker", plannedUrl: "https://make-it-pretty-cloudflare.pages.dev", url: null, verified: false },
   projectmanager: { name: "Nikki Project Manager", project: "nikki-project-manager-cloudflare", type: "pages", plannedUrl: "https://nikki-project-manager-cloudflare.pages.dev", url: "https://nikki-project-manager-cloudflare.pages.dev", verified: true },
-  ocode: { name: "OCode", project: "ocode-cloudflare", type: "workers-opennext", plannedUrl: null, url: null, verified: false },
+  ocode: { name: "OCode", project: "ocode-cloudflare", type: "workers-opennext", plannedUrl: "https://ocode-cloudflare.nikkimasani.workers.dev", url: "https://ocode-cloudflare.nikkimasani.workers.dev", verified: true },
   picommand: { name: "Pi Command Center", project: "pi-command-center-cloudflare", type: "pages", plannedUrl: "https://pi-command-center-cloudflare.pages.dev", url: "https://pi-command-center-cloudflare.pages.dev", verified: true },
   hobonichi: { name: "Hobonichi Planner", project: "hobonichi-planner-cloudflare", type: "pages", plannedUrl: "https://hobonichi-planner-cloudflare.pages.dev", url: "https://hobonichi-planner-cloudflare.pages.dev", verified: true },
   wtm: { name: "WTM | What’s the Move", project: "wtm-whats-the-move-cloudflare", type: "pages-functions", plannedUrl: "https://wtm-whats-the-move-cloudflare.pages.dev", url: "https://wtm-whats-the-move-cloudflare.pages.dev", verified: true }
