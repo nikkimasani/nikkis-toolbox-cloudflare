@@ -1,4 +1,4 @@
-const CACHE_NAME = 'toolbox-v10';
+const CACHE_NAME = 'toolbox-v11';
 
 const STATIC_ASSETS = [
   '/manifest.json',
@@ -12,7 +12,8 @@ function updateLauncher(html) {
     .replace('<span class="card-glyph">LCC</span>', '<span class="card-glyph">OS</span>')
     .replace('<div class="card-name">Life Command Center</div>', '<div class="card-name">Life OS</div>')
     .replace('Open Life Command Center <span class="arrow">→</span>', 'Open Life OS <span class="arrow">→</span>')
-    .replace('href="https://hobonichi-planner.vercel.app" data-key="" data-open="newtab"', 'href="https://hobonichi-planner.vercel.app" data-key=""');
+    .replace('href="https://hobonichi-planner.vercel.app" data-key="" data-open="newtab"', 'href="https://hobonichi-planner.vercel.app" data-key=""')
+    .replace('href="https://pi-command-center.vercel.app"', 'href="https://pi-command-center-cloudflare.pages.dev/"');
 
   if (!next.includes('.card.wtm{')) {
     next = next.replace(
