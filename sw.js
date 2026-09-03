@@ -1,4 +1,4 @@
-const CACHE_NAME = 'toolbox-v13';
+const CACHE_NAME = 'toolbox-v14';
 
 const STATIC_ASSETS = [
   '/manifest.json',
