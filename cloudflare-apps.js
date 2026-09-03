@@ -24,7 +24,7 @@ window.NIKKI_CLOUDFLARE_APPS = {
   picommand: { name: "Pi Command Center", project: "pi-command-center-cloudflare", type: "pages", plannedUrl: "https://pi-command-center-cloudflare.pages.dev", url: "https://pi-command-center-cloudflare.pages.dev", verified: true },
   hobonichi: { name: "Hobonichi Planner", project: "hobonichi-planner-cloudflare", type: "pages", plannedUrl: "https://hobonichi-planner-cloudflare.pages.dev", url: "https://hobonichi-planner-cloudflare.pages.dev", verified: true },
   wtm: { name: "WTM | What’s the Move", project: "wtm-whats-the-move-cloudflare", type: "pages-functions", plannedUrl: "https://wtm-whats-the-move-cloudflare.pages.dev", url: "https://wtm-whats-the-move-cloudflare.pages.dev", verified: true },
-  meetingnotes: { name: "Meeting Notes", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true }
+  meetingnotes: { name: "Meeting Notes", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true },\n  streamvault: { name: "Stream Vault", project: "stream-vault-cloudflare", type: "pages", plannedUrl: "https://stream-vault-cloudflare.pages.dev", url: "", verified: false }
 };
 
 (function applyCloudflareRegistry() {
