@@ -12,7 +12,7 @@ window.NIKKI_CLOUDFLARE_APPS = {
   slaterun: { name: "SlateRun Sports Hub", project: "slaterun-cloudflare", type: "pages", plannedUrl: "https://slaterun-cloudflare.pages.dev", url: "https://slaterun-cloudflare.pages.dev", verified: true },
   craftclub: { name: "Dabble", project: "dabble-cloudflare", type: "pages", plannedUrl: "https://dabble-cloudflare.pages.dev", url: "https://dabble-cloudflare.pages.dev", verified: true },
   pmcopilot: { name: "PM Copilot", project: "pm-copilot-cloudflare", type: "pages", plannedUrl: "https://pm-copilot-cloudflare.pages.dev", url: "https://pm-copilot-cloudflare.pages.dev", verified: true },
-  opendesign: { name: "Open Design", project: "open-design-local", type: "local-lan", plannedUrl: "http://10.0.0.29:7456", url: "http://10.0.0.29:7456", verified: true },
+  opendesign: { name: "Open Design", project: "open-design-local", type: "local-lan", plannedUrl: "http://10.0.0.29:7457", url: "http://10.0.0.29:7457", verified: true },
   careerarsenal: { name: "Career Arsenal", project: "career-arsenal-cloudflare", type: "workers-opennext", plannedUrl: "https://career-arsenal-cloudflare.nikkimasani.workers.dev", url: "https://career-arsenal-cloudflare.nikkimasani.workers.dev", verified: true },
   drawyourfont: { name: "Draw Your Font", project: "draw-your-font-cloudflare", type: "pages", plannedUrl: "https://draw-your-font-cloudflare.pages.dev", url: "https://draw-your-font-cloudflare.pages.dev", verified: true },
   statvault: { name: "StatVault", project: "statvault-cloudflare", type: "pages-functions", plannedUrl: "https://statvault-cloudflare.pages.dev", url: "https://statvault-cloudflare.pages.dev", verified: true },
@@ -23,14 +23,12 @@ window.NIKKI_CLOUDFLARE_APPS = {
   picommand: { name: "Pi Command Center", project: "pi-command-center-cloudflare", type: "pages", plannedUrl: "https://pi-command-center-cloudflare.pages.dev", url: "https://pi-command-center-cloudflare.pages.dev", verified: true },
   hobonichi: { name: "Hobonichi Planner", project: "hobonichi-planner-cloudflare", type: "pages", plannedUrl: "https://hobonichi-planner-cloudflare.pages.dev", url: "https://hobonichi-planner-cloudflare.pages.dev", verified: true },
   wtm: { name: "WTM | What’s the Move", project: "wtm-whats-the-move-cloudflare", type: "pages-functions", plannedUrl: "https://wtm-whats-the-move-cloudflare.pages.dev", url: "https://wtm-whats-the-move-cloudflare.pages.dev", verified: true },
-  meetingnotes: { name: "Meeting Notes", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true },\n  streamvault: { name: "Stream Vault", project: "stream-vault-cloudflare", type: "pages", plannedUrl: "https://stream-vault-cloudflare.pages.dev", url: "", verified: false }
+  meetingnotes: { name: "Said and Done", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true }
+  // Stream Vault is not deployed on Cloudflare yet; its card keeps the Vercel URL in index.html.
 };
 
 (function applyCloudflareRegistry() {
   document.documentElement.dataset.hosting = 'cloudflare';
-  document.title = "Nikki's Toolbox · Cloudflare";
-  const masthead = document.querySelector('.masthead .kicker');
-  if (masthead) masthead.textContent = 'Personal toolbox · Cloudflare edition';
 
   for (const [className, app] of Object.entries(window.NIKKI_CLOUDFLARE_APPS)) {
     const card = document.querySelector(`.card.${className}`);
@@ -42,7 +40,6 @@ window.NIKKI_CLOUDFLARE_APPS = {
     card.dataset.hosting = 'cloudflare';
     if (app.verified && app.url) {
       card.href = app.url;
-      card.dataset.open = 'newtab';
       card.target = '_blank';
       card.rel = 'noopener';
       card.dataset.cloudflareUrl = app.url;
