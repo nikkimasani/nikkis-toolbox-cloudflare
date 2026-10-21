@@ -13,7 +13,6 @@ window.NIKKI_CLOUDFLARE_APPS = {
   craftclub: { name: "Dabble", project: "dabble-cloudflare", type: "pages", plannedUrl: "https://dabble-cloudflare.pages.dev", url: "https://dabble-cloudflare.pages.dev", verified: true },
   pmcopilot: { name: "PM Copilot", project: "pm-copilot-cloudflare", type: "pages", plannedUrl: "https://pm-copilot-cloudflare.pages.dev", url: "https://pm-copilot-cloudflare.pages.dev", verified: true },
   opendesign: { name: "Open Design", project: "open-design-local", type: "local-lan", plannedUrl: "http://10.0.0.29:7456", url: "http://10.0.0.29:7456", verified: true },
-  lifecommand: { name: "Life OS", project: "life-os-cloudflare", type: "pages", plannedUrl: "https://life-os-cloudflare.pages.dev", url: "https://life-os-cloudflare.pages.dev", verified: true },
   careerarsenal: { name: "Career Arsenal", project: "career-arsenal-cloudflare", type: "workers-opennext", plannedUrl: "https://career-arsenal-cloudflare.nikkimasani.workers.dev", url: "https://career-arsenal-cloudflare.nikkimasani.workers.dev", verified: true },
   drawyourfont: { name: "Draw Your Font", project: "draw-your-font-cloudflare", type: "pages", plannedUrl: "https://draw-your-font-cloudflare.pages.dev", url: "https://draw-your-font-cloudflare.pages.dev", verified: true },
   statvault: { name: "StatVault", project: "statvault-cloudflare", type: "pages-functions", plannedUrl: "https://statvault-cloudflare.pages.dev", url: "https://statvault-cloudflare.pages.dev", verified: true },

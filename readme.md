@@ -16,7 +16,6 @@ A launcher dashboard — one place to open all of my apps, installable as a PWA 
 | 6 | PM Copilot | https://pm-copilot-six.vercel.app |
 | 7 | Open Design | http://10.0.0.29:7457 |
 | 8 | World Monitor | https://www.worldmonitor.app |
-| 9 | Life Command Center | https://nikki-transition-plan.nikkimasani.chatgpt.site |
 
 Each app opens in its own browser tab, so several can stay open at once; switch between them with your browser tabs while the Toolbox remains available. Press **1–9** on a keyboard to open the corresponding app in a new tab.
 
