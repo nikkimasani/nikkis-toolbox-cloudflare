@@ -30,6 +30,7 @@ This matrix defines the separate Cloudflare ecosystem. Existing Vercel repos, pr
 | Pi Command Center | `nikkimasani/pi-command-center` | `pi-command-center-cloudflare` | `pi-command-center-cloudflare` | Pages | `https://pi-command-center-cloudflare.pages.dev` |
 | Hobonichi Planner | `nikkimasani/hobonichi-planner` | `hobonichi-planner-cloudflare` | `hobonichi-planner-cloudflare` | Pages | `https://hobonichi-planner-cloudflare.pages.dev` |
 | WTM | `nikkimasani/wtm-whats-the-move` | `wtm-whats-the-move-cloudflare` | `wtm-whats-the-move-cloudflare` | Pages + Functions | `https://wtm-whats-the-move-cloudflare.pages.dev` |
+| AgVisualizer | `nikkimasani/agvisualizer` | none yet | none yet (UI on Vercel; `agvisualizer-relay` Worker is separate) | static site | card links to `https://agvisualizer.vercel.app` until a Pages copy exists |
 | Open Design | local network app | none | none | local only | keep current LAN URL |
 | World Monitor | external site | none | none | external | keep `worldmonitor.app` |
 
