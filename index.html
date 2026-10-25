@@ -3,37 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b0b10">
+<meta name="theme-color" content="#eef0f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101318" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Toolbox">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Nikki Masani, product builder. A portfolio of web apps I designed, built, and shipped.">
+<meta property="og:title" content="Nikki Masani, product builder">
+<meta property="og:description" content="A portfolio of web apps I designed, built, and shipped.">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/icon-192.svg">
-<title>Nikki's Toolbox</title>
+<title>Nikki Masani, product builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {--bg:#0b0b10;--bg2:#12121a;--border:#23232f;--text:#f2f0eb;--muted:#8b8b9a;--faint:#55555f;--radius:18px;--ease:cubic-bezier(0.16,1,0.3,1)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;min-height:100vh;overflow-x:hidden}body::before{content:'';position:fixed;inset:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(96,180,255,.07),transparent 60%),radial-gradient(900px 500px at 10% 110%,rgba(255,61,0,.05),transparent 60%);pointer-events:none;z-index:0}.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(20px,4vw,40px) 80px}.launcher-tools{display:grid;gap:12px;margin-bottom:24px}.search-shell,.filter-row,.recent-shell{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.launch-note{color:var(--muted);font-size:13px;line-height:1.5}.search-shell input{width:100%;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);padding:14px 16px;font:inherit}.filter-chip,.recent-pill,.app-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted);padding:8px 12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}.filter-chip{cursor:pointer}.filter-chip.active{color:var(--text);border-color:var(--text)}.recent-pill{text-decoration:none}.card-meta{margin-top:12px}.card.hidden-by-filter{display:none}.app-workspace{display:none;margin:0 0 24px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg2)}.app-workspace.has-tabs{display:block}.app-tab-list{display:flex;gap:6px;overflow-x:auto;padding:10px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.025)}.app-tab{display:inline-flex;align-items:center;gap:8px;max-width:210px;flex:0 0 auto;padding:8px 9px 8px 12px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);font:inherit;font-size:13px;cursor:pointer}.app-tab.is-active{background:#1c1c28;border-color:var(--border);color:var(--text)}.app-tab-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-tab-close{display:inline-grid;place-items:center;width:20px;height:20px;border:0;border-radius:6px;background:transparent;color:inherit;font:inherit;cursor:pointer}.app-tab-close:hover{background:rgba(255,255,255,.12)}.app-panel{height:min(72vh,760px);background:#fff}.app-panel[hidden]{display:none}.app-panel iframe{width:100%;height:100%;border:0;display:block}header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:clamp(32px,6vw,64px)}.masthead .kicker{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}.kicker::before{content:'';width:26px;height:1px;background:var(--muted);display:inline-block}h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}h1 em{font-style:italic;font-weight:600;color:var(--muted)}.meta{text-align:right;font-size:13px;color:var(--muted);line-height:1.7;padding-bottom:6px}#clock{font-size:26px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:.02em;display:block}.grid{display:grid;grid-template-columns:1fr;gap:14px}.card{--accent:#60b4ff;--card-bg:#12121a;position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px 22px;text-decoration:none;color:var(--text);overflow:hidden;transition:transform .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease);opacity:0;transform:translateY(18px);animation:rise .7s var(--ease) forwards}.card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.12s}.card:nth-child(3){animation-delay:.19s}.card:nth-child(4){animation-delay:.26s}.card:nth-child(5){animation-delay:.33s}.card:nth-child(6){animation-delay:.40s}.card:nth-child(7){animation-delay:.47s}.card:nth-child(8){animation-delay:.54s}.card:nth-child(9){animation-delay:.61s}.card:nth-child(10){animation-delay:.68s}.card:nth-child(11){animation-delay:.75s}.card:nth-child(12){animation-delay:.82s}.card:nth-child(13){animation-delay:.89s}.card:nth-child(14){animation-delay:.96s}.card:nth-child(15){animation-delay:1.03s}.card:nth-child(16){animation-delay:1.10s}.card:nth-child(17){animation-delay:1.17s}.card:nth-child(18){animation-delay:1.24s}.card:nth-child(19){animation-delay:1.31s}.card:nth-child(20){animation-delay:1.38s}@keyframes rise{to{opacity:1;transform:none}}.card::after{content:'';position:absolute;inset:0;background:radial-gradient(420px 220px at 85% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%);opacity:.55;transition:opacity .45s var(--ease)}.card:hover,.card:focus-visible{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 55%,var(--border));box-shadow:0 18px 44px -18px color-mix(in srgb,var(--accent) 35%,transparent);outline:none}.card:hover::after{opacity:1}.card:active{transform:translateY(-1px)}.card-top{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-num{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:15px;color:var(--faint);letter-spacing:.05em}.card-glyph{font-size:30px;line-height:1;filter:drop-shadow(0 0 14px color-mix(in srgb,var(--accent) 45%,transparent))}.card-body{position:relative;margin-top:auto}.card-name{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.01em;margin-bottom:7px}.card-desc{font-size:13.5px;color:var(--muted);line-height:1.55;max-width:42ch}.card-cta{position:relative;margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}.card-cta .arrow{transition:transform .35s var(--ease)}.card:hover .card-cta .arrow{transform:translateX(5px)}.card.tradelab{--accent:#60b4ff;--card-bg:#0d1220}.card.booknook{--accent:#c18d5b;--card-bg:#17120c}.card.pmp{--accent:#c8ff00;--card-bg:#131608}.card.slaterun{--accent:#ff3d00;--card-bg:#170d09}.card.craftclub{--accent:#f472b6;--card-bg:#170d14}.card.pmcopilot{--accent:#2de0c0;--card-bg:#0a1614}.card.opendesign{--accent:#a78bfa;--card-bg:#120d1c}.card.worldmonitor{--accent:#38bdf8;--card-bg:#081420}.card.careerarsenal{--accent:#fb7185;--card-bg:#1b0d13}.card.drawyourfont{--accent:#e879f9;--card-bg:#190d1c}.card.statvault{--accent:#52b788;--card-bg:#0b1622}.card.bodycompass{--accent:#d09b74;--card-bg:#1a120e}.card.makeitpretty{--accent:#fbbf24;--card-bg:#191508}.card.projectmanager{--accent:#8b7cff;--card-bg:#111027}.card.ocode{--accent:#ff6d3b;--card-bg:#1b100c}.card.picommand{--accent:#4be1d1;--card-bg:#071723}.card.hobonichi{--accent:#c9506b;--card-bg:#1c0f13}.card.wtm{--accent:#a452ff;--card-bg:#100b17}.card.penecho{--accent:#5b8def;--card-bg:#0d1420}.card.focusnook{--accent:#8fc7b3;--card-bg:#0e1712}.card.streamvault{--accent:#61f0c0;--card-bg:#091713}.card.agvisualizer{--accent:#ff8fc0;--card-bg:#1c0f18}.card.nikkiscloset{--accent:#5ad1ff;--card-bg:#0b2540}footer{margin-top:56px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--faint);font-size:12px;letter-spacing:.06em}.hint kbd{font-family:inherit;font-size:11px;color:var(--muted);border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;padding:2px 7px;margin:0 2px;background:var(--bg2)}footer .hint{font-size:0}footer .hint::before{content:'Press 1 to 9 to jump to an app';font-size:12px}@media(max-width:760px){.card{min-height:160px}.meta{text-align:left}.hint{display:none}}@media(prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none;transition:none}}
+:root{
+  --paper:#eef0f3;--surface:#ffffff;--ink:#15171c;--muted:#5b6170;--faint:#8a909c;--rule:#d6dae1;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;--body:'Instrument Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);--max:1120px;
+  /* aliases used by the launcher workspace */
+  --bg:var(--paper);--bg2:var(--surface);--border:var(--rule);--text:var(--ink);
+}
+@media (prefers-color-scheme:dark){:root{--paper:#101318;--surface:#181c23;--ink:#e9ecf1;--muted:#9aa1ae;--faint:#6c7380;--rule:#2a303a}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;min-height:100vh;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+
+/* ---------- nav ---------- */
+.topbar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.topbar.scrolled{border-bottom-color:var(--rule)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.monogram{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none}
+.nav{display:flex;align-items:center;gap:clamp(12px,3vw,28px);font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.mode-btn{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:8px 14px;cursor:pointer}
+.mode-btn:hover{border-color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,9vw,112px) 0 clamp(40px,6vw,72px)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,11vw,8.5rem);line-height:.92;letter-spacing:-.045em;font-variation-settings:'opsz' 96}
+.hero .role{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:-.02em;color:var(--muted);margin-top:14px}
+.hero .lede{max-width:56ch;font-size:clamp(1.05rem,1.6vw,1.2rem);margin-top:24px}
+.band{margin-top:clamp(36px,6vw,64px)}
+.band-row{display:flex;gap:4px;height:clamp(72px,11vw,120px);align-items:flex-end}
+.chip{flex:1 1 0;min-width:0;height:100%;background:var(--accent);border-radius:3px;transform-origin:bottom;text-decoration:none;transition:flex-grow .4s var(--ease)}
+.chip:hover,.chip:focus-visible{flex-grow:3.2}
+.band-caption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-size:14px;color:var(--muted);min-height:1.5em}
+.band-caption strong{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion:no-preference){
+  .chip{animation:grow .9s var(--ease) both;animation-delay:calc(var(--i) * 28ms)}
+  @keyframes grow{from{transform:scaleY(.04)}to{transform:none}}
+}
+
+/* ---------- sections ---------- */
+section.block{padding:clamp(48px,7vw,88px) 0;border-top:1px solid var(--rule)}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-.03em;line-height:1.05}
+.block-head p{color:var(--muted);max-width:46ch}
+
+/* selected work */
+.features{display:grid;gap:20px}
+.feature{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--surface);border:1px solid var(--rule);border-radius:20px;overflow:hidden;text-decoration:none;min-height:260px}
+.feature-art{position:relative;background:var(--accent);display:grid;place-items:center;overflow:hidden}
+.feature-art span{font-size:clamp(64px,9vw,112px);line-height:1;filter:drop-shadow(0 10px 24px rgba(0,0,0,.18))}
+.feature-art::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.12) 22px 23px)}
+.feature-copy{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.feature-copy h3{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.05}
+.feature-copy p{color:var(--muted);max-width:52ch}
+.feature-foot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:6px;font-size:14px}
+.feature:hover .visit,.card:hover .card-domain{text-decoration:underline}
+.feature:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.feature:nth-child(even) .feature-art{order:2}
+
+.tag{display:inline-block;font-size:13px;font-weight:500;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 16%,var(--surface));color:var(--ink);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--rule))}
+.visit{font-weight:600}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{font:inherit;font-size:14px;color:var(--muted);background:transparent;border:1px solid var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer}
+.filter .n{color:var(--faint);margin-left:4px}
+.filter:hover{color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filter[aria-pressed="true"] .n{color:inherit;opacity:.65}
+
+/* ---------- project cards (markup shared with the launcher) ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{--accent:#7a8599;position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:22px 22px 20px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .2s,transform .2s var(--ease)}
+.card::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--accent)}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 60%,var(--rule));transform:translateY(-2px)}
+.card.flash{box-shadow:0 0 0 3px var(--accent)}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.card-num{display:none;font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums}
+.card-glyph{order:-1;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;font-size:24px;line-height:1;background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.card-body{display:flex;flex-direction:column;flex:1}
+.card-name{font-family:var(--display);font-weight:600;font-size:1.35rem;letter-spacing:-.02em;line-height:1.15;margin-bottom:6px}
+.card-desc{color:var(--muted);font-size:15px;flex:1}
+.card-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:18px;font-size:13px}
+.card-domain{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.card-note{color:var(--muted)}
+.card-cta{display:none}
+.card.is-hidden,.card.is-private{display:none}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,64px)}
+.about-copy p{font-size:clamp(1.05rem,1.5vw,1.18rem);max-width:58ch}
+.about-copy p+p{margin-top:16px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-top:36px}
+.fact b{display:block;font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.fact span{color:var(--muted);font-size:15px}
+
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+
+@media (max-width:760px){
+  .nav .hide-sm{display:none}
+  .feature,.feature:nth-child(even){grid-template-columns:1fr}
+  .feature:nth-child(even) .feature-art{order:0}
+  .feature-art{min-height:160px}
+  .about{grid-template-columns:1fr}
+  .band-row{gap:2px}
+}
+
+/* ---------- private launcher mode ---------- */
+.launcher-only{display:none}
+body.launcher .launcher-only{display:block}
+body.launcher .portfolio-only{display:none}
+body.launcher .card.is-private:not(.is-hidden){display:flex}
+body.launcher .card-num{display:inline}
+body.launcher .card-cta{display:inline-flex;gap:6px;margin-top:14px;font-size:14px;font-weight:600}
+body.launcher .card-domain{display:none}
+.launch-head{padding:40px 0 20px;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+body.launcher .launch-head{display:flex}
+.launch-head h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.04em;line-height:1}
+.launch-head .meta{text-align:right;color:var(--muted);font-size:14px}
+#clock{display:block;font-family:var(--display);font-size:28px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.launcher-tools{display:none;gap:12px;margin-bottom:24px}
+body.launcher .launcher-tools{display:grid}
+.launcher-tools input{width:100%;border:1px solid var(--rule);border-radius:12px;background:var(--surface);color:var(--ink);padding:13px 15px;font:inherit}
+.recent-shell{display:flex;gap:8px;flex-wrap:wrap}
+.recent-pill{font-size:13px;border:1px solid var(--rule);border-radius:999px;padding:6px 12px;text-decoration:none;color:var(--muted);background:var(--surface)}
+.private-pill{font-size:12px;color:var(--muted);margin-left:6px}
+body.launcher #projects{border-top:0;padding-top:0}
+body.launcher #projects .block-head{display:none}
+.app-workspace{display:none;position:fixed;inset:0;z-index:20;background:var(--surface)}
+.app-workspace.has-tabs{display:flex;flex-direction:column}
+.app-tab-list{display:flex;gap:6px;overflow-x:auto;min-height:58px;padding:10px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left));border-bottom:1px solid var(--rule);background:var(--paper)}
+.app-tab-home,.app-tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;max-width:220px}
+.app-tab-home{border-color:var(--rule);color:var(--ink)}
+.app-tab.is-active{background:var(--surface);border-color:var(--rule);color:var(--ink)}
+.app-tab-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.app-tab-close{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px}
+.app-tab-close:hover{background:var(--rule)}
+#appTabPanels{flex:1;min-height:0}
+.app-panel{width:100%;height:100%;background:#fff}
+.app-panel[hidden]{display:none}
+.app-panel iframe{width:100%;height:100%;border:0;display:block}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 <style>
-/* Full-screen app tabs: the launcher remains available via the Apps button. */
-.app-workspace { position: fixed !important; inset: 0; z-index: 10; margin: 0 !important; border: 0 !important; border-radius: 0 !important; }
-.app-workspace.has-tabs { display: flex !important; flex-direction: column; }
-.app-tab-list { min-height: 58px; padding: 10px max(10px, env(safe-area-inset-right)) 10px max(10px, env(safe-area-inset-left)); }
-.app-tab-home { flex: 0 0 auto; align-self: center; margin-right: 4px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: transparent; color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
-#appTabPanels { flex: 1; min-height: 0; }
-.app-panel { width: 100%; height: 100% !important; background: #fff; }
+/* Per-app accent colors (one rule per app; add new apps here) */
+.card.tradelab{--accent:#60b4ff}
+.card.booknook{--accent:#c18d5b}
+.card.pmp{--accent:#c8ff00}
+.card.slaterun{--accent:#ff3d00}
+.card.craftclub{--accent:#f472b6}
+.card.pmcopilot{--accent:#2de0c0}
+.card.opendesign{--accent:#a78bfa}
+.card.worldmonitor{--accent:#38bdf8}
+.card.careerarsenal{--accent:#fb7185}
+.card.drawyourfont{--accent:#e879f9}
+.card.statvault{--accent:#52b788}
+.card.bodycompass{--accent:#d09b74}
+.card.makeitpretty{--accent:#fbbf24}
+.card.projectmanager{--accent:#8b7cff}
+.card.ocode{--accent:#ff6d3b}
+.card.picommand{--accent:#4be1d1}
+.card.hobonichi{--accent:#c9506b}
+.card.wtm{--accent:#a452ff}
+.card.penecho{--accent:#5b8def}
+.card.focusnook{--accent:#8fc7b3}
+.card.streamvault{--accent:#61f0c0}
+.card.agvisualizer{--accent:#ff8fc0}
+.card.nikkiscloset{--accent:#5ad1ff}
+.card.meetingnotes{--accent:#69e0c3}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header><div class="masthead"><div class="kicker">Personal command center</div><h1>Nikki's <em>Toolbox</em></h1></div><div class="meta"><span id="clock">—:—</span><span id="date-line">Loading…</span></div></header>
-<section class="launcher-tools" aria-label="Launcher tools"><div class="search-shell"><input id="appSearchInput" type="search" placeholder="Search apps, like career, reader, design, sports"></div><div class="filter-row" id="availabilityFilters"><button class="filter-chip active" type="button" data-filter="all">All</button><button class="filter-chip" type="button" data-filter="live">Live</button><button class="filter-chip" type="button" data-filter="local">Local</button></div><p class="launch-note">Open any app to add it to the workspace below. Keep several open and switch between their tabs anytime.</p><div class="recent-shell" id="recentApps"></div></section>
-<section class="app-workspace" id="appWorkspace" aria-label="Open apps"><div class="app-tab-list" id="appTabList" role="tablist" aria-label="Open apps"><button class="app-tab-home" id="returnToLauncher" type="button">← Apps</button></div><div id="appTabPanels"></div></section>
-<main class="grid" aria-label="My apps">
+<header class="topbar"><div class="wrap">
+  <a class="monogram" href="#top" aria-label="Nikki Masani, back to top">NM</a>
+  <nav class="nav" aria-label="Main">
+    <a class="portfolio-only" href="#work">Work</a>
+    <a class="portfolio-only hide-sm" href="#about">About</a>
+    <a class="portfolio-only hide-sm" href="https://github.com/nikkimasani" target="_blank" rel="noopener">GitHub</a>
+    <button class="mode-btn" id="modeToggle" type="button" title="Switch to Nikki's private app launcher">Launcher</button>
+  </nav>
+</div></header>
+
+<div class="wrap" id="top">
+  <section class="hero portfolio-only" aria-labelledby="heroName">
+    <h1 id="heroName">Nikki Masani</h1>
+    <p class="role">Product builder</p>
+    <p class="lede">I design, build, and ship web apps for real problems in my own work and life, from PMP exam prep and stakeholder comms to trading journals and digital planners. <span id="appCountLine">Every one of them is live.</span></p>
+    <div class="band" aria-label="Every project, one color each">
+      <div class="band-row" id="band"></div>
+      <div class="band-caption"><span id="bandLabel"></span></div>
+    </div>
+  </section>
+
+  <div class="launch-head launcher-only">
+    <h1>Toolbox</h1>
+    <div class="meta"><span id="clock">—:—</span><span id="date-line"></span></div>
+  </div>
+
+  <section class="block portfolio-only" id="work" aria-labelledby="workTitle">
+    <div class="block-head"><h2 id="workTitle">Selected work</h2></div>
+    <div class="features" id="features"></div>
+  </section>
+
+  <section class="block" id="projects" aria-labelledby="projectsTitle">
+    <div class="block-head"><h2 id="projectsTitle">All projects</h2></div>
+    <section class="launcher-tools" aria-label="Launcher tools">
+      <input id="appSearchInput" type="search" placeholder="Search apps, like career, reader, design, sports">
+      <div class="recent-shell" id="recentApps"></div>
+    </section>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects by category"></div>
+    <section class="app-workspace" id="appWorkspace" aria-label="Open apps"><div class="app-tab-list" id="appTabList" role="tablist" aria-label="Open apps"><button class="app-tab-home" id="returnToLauncher" type="button">Back to apps</button></div><div id="appTabPanels"></div></section>
+<main class="grid" aria-label="Projects">
 <a class="card tradelab" href="https://tradelab-cloudflare.pages.dev" data-key="1" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 01</span><span class="card-glyph">📈</span></div><div class="card-body"><div class="card-name">Nikki's TradeLab</div><p class="card-desc">Charts, position calculator, P&amp;L journal, paper trading, live news, and market classroom — all in one lab.</p><span class="card-cta">Open TradeLab <span class="arrow">→</span></span></div></a>
 <a class="card booknook" href="https://reader-hub-cloudflare.pages.dev" data-key="2" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 02</span><span class="card-glyph">📚</span></div><div class="card-body"><div class="card-name">The Book Nook</div><p class="card-desc">A quiet reading sanctuary with shelves, an EPUB reader, and the shared book club.</p><span class="card-cta">Open Book Nook <span class="arrow">→</span></span></div></a>
 <a class="card pmp" href="https://pmp-boot-camp-cloudflare.pages.dev" data-key="3" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 03</span><span class="card-glyph">🎓</span></div><div class="card-body"><div class="card-name">PMP Boot Camp</div><p class="card-desc">Study dashboard, quizzes, and flashcards on the road to a first-attempt PMP pass.</p><span class="card-cta">Open Boot Camp <span class="arrow">→</span></span></div></a>
@@ -59,33 +261,188 @@
 <a class="card agvisualizer" href="https://agvisualizer.vercel.app" data-key="" data-open="newtab" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 23</span><span class="card-glyph">🌸</span></div><div class="card-body"><div class="card-name">AgVisualizer</div><p class="card-desc">A cute isometric office where your AI agents are little characters — watch them work, decorate the floor, hang out with them, and see what needs you.</p><span class="card-cta">Open AgVisualizer <span class="arrow">→</span></span></div></a>
 <a class="card nikkiscloset" href="https://nikkiscloset.vercel.app" data-key="" data-open="newtab" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 24</span><span class="card-glyph">👗</span></div><div class="card-body"><div class="card-name">Nikki's Closet</div><p class="card-desc">A digital closet you can dress up in 3D — upload your real clothes, try them on a model shaped like you, log your outfit of the day, and match Pinterest inspo to what you own.</p><span class="card-cta">Open Nikki's Closet <span class="arrow">→</span></span></div></a>
 </main>
-<footer><span>Designed by Nikki Masani</span><span class="hint">Press <kbd>1</kbd>–<kbd>8</kbd> to jump to an app</span></footer>
+  </section>
+
+  <section class="block portfolio-only" id="about" aria-labelledby="aboutTitle">
+    <div class="about">
+      <h2 id="aboutTitle">How I build</h2>
+      <div class="about-copy">
+        <p>Every app here started as something I needed. I scope the problem, design the experience, build it with modern AI coding tools, and ship it to a real URL, then keep iterating as I use it.</p>
+        <p>That loop of defining what matters, cutting scope, and shipping something people can actually use is the same work whether the user is me or a whole team.</p>
+      </div>
+    </div>
+  </section>
 </div>
+
+<footer><div class="wrap"><span>Designed and built by Nikki Masani</span><a href="https://github.com/nikkimasani" target="_blank" rel="noopener">github.com/nikkimasani</a></div></footer>
+
 <script>
-{
-  const card = document.querySelector('.card.meetingnotes');
-  const name = card?.querySelector('.card-name');
-  const description = card?.querySelector('.card-desc');
-  const cta = card?.querySelector('.card-cta');
-  if (name) name.textContent = 'Said and Done';
-  if (description) description.textContent = 'Turn conversations into transcripts, summaries, decisions, and clear action items.';
-  if (cta) cta.innerHTML = 'Open Said and Done <span class="arrow">→</span>';
+// Portfolio details for each app, keyed by the card's class name.
+// cat: category shown on the card. private: hidden from the public portfolio (still in the launcher).
+// A new card with no entry here still shows up, under "More".
+const PORTFOLIO = {
+  pmcopilot:{cat:'Work & PM'}, projectmanager:{cat:'Work & PM'}, meetingnotes:{cat:'Work & PM'},
+  careerarsenal:{cat:'Work & PM'}, makeitpretty:{cat:'Work & PM'}, focusnook:{cat:'Work & PM'},
+  penecho:{cat:'AI'}, ocode:{cat:'AI'}, agvisualizer:{cat:'AI'},
+  opendesign:{cat:'AI', note:'Runs on my home network'},
+  tradelab:{cat:'Data & analytics'}, statvault:{cat:'Data & analytics'}, slaterun:{cat:'Data & analytics'}, worldmonitor:{cat:'Data & analytics'},
+  pmp:{cat:'Learning'}, picommand:{cat:'Learning'},
+  hobonichi:{cat:'Creative'}, drawyourfont:{cat:'Creative'}, craftclub:{cat:'Creative'},
+  booknook:{cat:'Everyday'}, bodycompass:{cat:'Everyday'}, wtm:{cat:'Everyday'}, nikkiscloset:{cat:'Everyday'},
+  streamvault:{cat:'Everyday', private:true},
+};
+const FEATURED = ['pmcopilot','tradelab','hobonichi'];
+const CATEGORY_ORDER = ['Work & PM','AI','Data & analytics','Learning','Creative','Everyday','More'];
+const MODE_KEY = 'toolbox-mode-v1';
+const TOOLBOX_RECENT_KEY = 'toolbox-recent-apps-v1';
+
+function appKey(card){return [...card.classList].find(c=>c!=='card'&&!c.startsWith('is-')&&c!=='flash')||''}
+function infoFor(card){return PORTFOLIO[appKey(card)]||{cat:'More'}}
+function cards(){return [...document.querySelectorAll('main.grid > .card')]}
+function nameOf(card){return card.querySelector('.card-name')?.textContent.trim()||'App'}
+function domainOf(href){try{const u=new URL(href);return u.hostname.startsWith('10.')?'':u.host.replace(/^www\./,'')}catch{return''}}
+function isLauncher(){return document.body.classList.contains('launcher')}
+function safeGet(k){try{return localStorage.getItem(k)}catch{return null}}
+function safeSet(k,v){try{localStorage.setItem(k,v)}catch{}}
+
+/* ---------- launcher (private) behavior, carried over from the original toolbox ---------- */
+function readRecentApps(){try{const p=JSON.parse(safeGet(TOOLBOX_RECENT_KEY)||'[]');return Array.isArray(p)?p:[]}catch{return[]}}
+function writeRecentApp(card){const next=readRecentApps().filter(i=>i.href!==card.href);next.unshift({href:card.href,name:nameOf(card)});safeSet(TOOLBOX_RECENT_KEY,JSON.stringify(next.slice(0,3)));renderRecentApps()}
+function renderRecentApps(){const shell=document.getElementById('recentApps');const recent=readRecentApps();shell.replaceChildren();if(!recent.length){const s=document.createElement('span');s.className='recent-pill';s.textContent='No recent apps yet';shell.append(s);return}recent.forEach(item=>{const a=document.createElement('a');a.className='recent-pill';a.href=item.href;a.target='_blank';a.rel='noopener';a.textContent='Recent: '+item.name;shell.append(a)})}
+function appIdFor(card){return`app-${card.href.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')}`}
+function activateApp(appId){document.querySelectorAll('.app-tab').forEach(t=>{const a=t.dataset.appId===appId;t.classList.toggle('is-active',a);t.setAttribute('aria-selected',String(a))});document.querySelectorAll('.app-panel').forEach(p=>{p.hidden=p.id!==`${appId}-panel`})}
+function closeApp(appId){const tab=document.querySelector(`.app-tab[data-app-id="${appId}"]`);const panel=document.getElementById(`${appId}-panel`);const was=tab?.classList.contains('is-active');tab?.remove();panel?.remove();const rest=document.querySelectorAll('.app-tab');document.getElementById('appWorkspace').classList.toggle('has-tabs',rest.length>0);if(was&&rest.length)activateApp(rest[rest.length-1].dataset.appId)}
+function openApp(card){
+  writeRecentApp(card);
+  if(card.dataset.open==='newtab'||!card.href){window.open(card.href,'_blank','noopener');return}
+  const appId=appIdFor(card);
+  if(document.querySelector(`.app-tab[data-app-id="${appId}"]`)){activateApp(appId);document.getElementById('appWorkspace').classList.add('has-tabs');return}
+  const name=nameOf(card);
+  const tab=document.createElement('button');tab.className='app-tab';tab.type='button';tab.dataset.appId=appId;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',`${appId}-panel`);
+  tab.innerHTML='<span class="app-tab-label"></span><span class="app-tab-close" role="button">×</span>';
+  tab.querySelector('.app-tab-label').textContent=name;tab.querySelector('.app-tab-close').setAttribute('aria-label','Close '+name);
+  tab.addEventListener('click',e=>{if(e.target.closest('.app-tab-close')){closeApp(appId);return}activateApp(appId)});
+  const panel=document.createElement('div');panel.className='app-panel';panel.id=`${appId}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-label',name);
+  const frame=document.createElement('iframe');frame.src=card.href;frame.title=name;panel.append(frame);
+  document.getElementById('appTabList').append(tab);document.getElementById('appTabPanels').append(panel);
+  document.getElementById('appWorkspace').classList.add('has-tabs');activateApp(appId);
 }
-function tickClock(){const now=new Date();document.getElementById('clock').textContent=now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});document.getElementById('date-line').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}tickClock();setInterval(tickClock,30000);
-document.addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;const card=document.querySelector('.card[data-key="'+e.key+'"]');if(card)openApp(card)});
-const TOOLBOX_RECENT_KEY='toolbox-recent-apps-v1';var currentAvailabilityFilter='all';function availabilityForCard(card){return card.href.includes('10.0.0.29')?'local':'live'}function ensureCardBadges(){document.querySelectorAll('.card').forEach(card=>{if(card.querySelector('.app-badge'))return;const meta=document.createElement('div');meta.className='card-meta';const badge=document.createElement('span');badge.className='app-badge';badge.textContent=availabilityForCard(card)==='local'?'Home Wi-Fi':'Live';meta.appendChild(badge);const body=card.querySelector('.card-body');if(body)body.insertBefore(meta,body.querySelector('.card-cta'))})}function readRecentApps(){try{const parsed=JSON.parse(localStorage.getItem(TOOLBOX_RECENT_KEY)||'[]');return Array.isArray(parsed)?parsed.filter(item=>item&&!/life-os|life-transition|transition-plan/i.test(item.href||'')):[]}catch{return[]}}function writeRecentApp(card){const next=readRecentApps().filter(item=>item.href!==card.href);next.unshift({href:card.href,name:card.querySelector('.card-name')?.textContent||'App'});localStorage.setItem(TOOLBOX_RECENT_KEY,JSON.stringify(next.slice(0,3)))}function appIdFor(card){return`app-${card.href.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')}`}function activateApp(appId){document.querySelectorAll('.app-tab').forEach(tab=>{const active=tab.dataset.appId===appId;tab.classList.toggle('is-active',active);tab.setAttribute('aria-selected',String(active))});document.querySelectorAll('.app-panel').forEach(panel=>{panel.hidden=panel.id!==`${appId}-panel`})}function closeApp(appId){const tab=document.querySelector(`.app-tab[data-app-id="${appId}"]`);const panel=document.getElementById(`${appId}-panel`);const wasActive=tab?.classList.contains('is-active');tab?.remove();panel?.remove();const remaining=document.querySelectorAll('.app-tab');document.getElementById('appWorkspace').classList.toggle('has-tabs',remaining.length>0);if(wasActive&&remaining.length)activateApp(remaining[remaining.length-1].dataset.appId)}function openApp(card){if(card.dataset.open==='newtab'){writeRecentApp(card);window.open(card.href,'_blank','noopener');return}const appId=appIdFor(card);const existing=document.querySelector(`.app-tab[data-app-id="${appId}"]`);writeRecentApp(card);if(existing){activateApp(appId);return}const name=card.querySelector('.card-name')?.textContent||'App';const tab=document.createElement('button');tab.className='app-tab';tab.type='button';tab.dataset.appId=appId;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',`${appId}-panel`);tab.innerHTML=`<span class="app-tab-label"></span><span class="app-tab-close" role="button" aria-label="Close ${name}">×</span>`;tab.querySelector('.app-tab-label').textContent=name;tab.addEventListener('click',event=>{if(event.target.closest('.app-tab-close')){closeApp(appId);return}activateApp(appId)});const panel=document.createElement('div');panel.className='app-panel';panel.id=`${appId}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-label',name);const frame=document.createElement('iframe');frame.src=card.href;frame.title=name;panel.appendChild(frame);document.getElementById('appTabList').appendChild(tab);document.getElementById('appTabPanels').appendChild(panel);document.getElementById('appWorkspace').classList.add('has-tabs');activateApp(appId);document.getElementById('appWorkspace').scrollIntoView({behavior:'smooth',block:'start'})}function renderRecentApps(){const recent=readRecentApps();const shell=document.getElementById('recentApps');if(!shell)return;shell.innerHTML=recent.length?recent.map(item=>`<a class="recent-pill" href="${item.href}" target="_blank" rel="noopener">Recent: ${item.name}</a>`).join(''):'<span class="recent-pill">No recent apps yet</span>'}function applyCardFilters(){const term=(document.getElementById('appSearchInput')?.value||'').trim().toLowerCase();document.querySelectorAll('.filter-chip').forEach(chip=>{chip.classList.toggle('active',chip.dataset.filter===currentAvailabilityFilter)});document.querySelectorAll('.card').forEach(card=>{const text=card.textContent.toLowerCase();const availability=availabilityForCard(card);const matchesSearch=!term||text.includes(term);const matchesAvailability=currentAvailabilityFilter==='all'||availability===currentAvailabilityFilter;card.classList.toggle('hidden-by-filter',!(matchesSearch&&matchesAvailability))})}ensureCardBadges();renderRecentApps();applyCardFilters();document.getElementById('appSearchInput')?.addEventListener('input',applyCardFilters);document.getElementById('availabilityFilters')?.addEventListener('click',event=>{const chip=event.target.closest('[data-filter]');if(!chip)return;currentAvailabilityFilter=chip.dataset.filter;applyCardFilters()});document.querySelectorAll('.card').forEach(card=>{card.target='_blank';card.rel='noopener';card.addEventListener('click',event=>{event.preventDefault();openApp(card)})});if('serviceWorker'in navigator&&location.protocol==='https:'){navigator.serviceWorker.addEventListener('controllerchange',()=>{if(window.__swReloading)return;window.__swReloading=true;window.location.reload()});navigator.serviceWorker.register('/sw.js').then(registration=>{registration.update().catch(()=>{});if(registration.waiting)registration.waiting.postMessage({type:'SKIP_WAITING'});registration.addEventListener('updatefound',()=>{const installing=registration.installing;if(!installing)return;installing.addEventListener('statechange',()=>{if(installing.state==='installed'&&navigator.serviceWorker.controller)installing.postMessage({type:'SKIP_WAITING'})})})}).catch(()=>{})}
-</script>
-<script>
-  const originalOpenApp = openApp;
-  openApp = function(card) {
-    originalOpenApp(card);
-    if (card.dataset.open !== 'newtab') {
-      document.getElementById('appWorkspace').classList.add('has-tabs');
-    }
-  };
-  document.getElementById('returnToLauncher')?.addEventListener('click', () => {
-    document.getElementById('appWorkspace').classList.remove('has-tabs');
+function tickClock(){const now=new Date();document.getElementById('clock').textContent=now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});document.getElementById('date-line').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}
+
+/* ---------- filtering ---------- */
+let currentCat='All';
+function applyFilters(){
+  const term=isLauncher()?(document.getElementById('appSearchInput').value||'').trim().toLowerCase():'';
+  cards().forEach(card=>{
+    const okCat=currentCat==='All'||infoFor(card).cat===currentCat;
+    const okTerm=!term||card.textContent.toLowerCase().includes(term);
+    card.classList.toggle('is-hidden',!(okCat&&okTerm));
   });
+  document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.cat===currentCat)));
+}
+function renderFilters(){
+  const visible=cards().filter(c=>isLauncher()||!c.classList.contains('is-private'));
+  const counts={};visible.forEach(c=>{const k=infoFor(c).cat;counts[k]=(counts[k]||0)+1});
+  const box=document.getElementById('filters');box.replaceChildren();
+  ['All',...CATEGORY_ORDER.filter(c=>counts[c])].forEach(cat=>{
+    const b=document.createElement('button');b.type='button';b.className='filter';b.dataset.cat=cat;
+    b.innerHTML='<span></span><span class="n"></span>';b.firstChild.textContent=cat;b.lastChild.textContent=cat==='All'?visible.length:counts[cat];
+    b.addEventListener('click',()=>{currentCat=cat;applyFilters()});box.append(b);
+  });
+  if(!counts[currentCat])currentCat='All';
+  applyFilters();
+}
+
+/* ---------- portfolio rendering ---------- */
+function enhanceCards(){
+  cards().forEach(card=>{
+    const info=infoFor(card);
+    card.classList.toggle('is-private',!!info.private);
+    card.id='project-'+appKey(card);
+    if(card.querySelector('.card-meta'))return;
+    const meta=document.createElement('div');meta.className='card-meta';
+    const tag=document.createElement('span');tag.className='tag';tag.textContent=info.cat;meta.append(tag);
+    const extra=document.createElement('span');
+    const d=domainOf(card.href);
+    extra.className=d&&!info.note?'card-domain':'card-note';extra.textContent=info.note||d||'Local app';
+    meta.append(extra);
+    if(info.private){const p=document.createElement('span');p.className='private-pill';p.textContent='Hidden from portfolio';meta.append(p)}
+    card.querySelector('.card-body').insertBefore(meta,card.querySelector('.card-cta'));
+  });
+}
+function renderBand(){
+  const band=document.getElementById('band');const label=document.getElementById('bandLabel');const def=label.textContent;
+  const pub=cards().filter(c=>!c.classList.contains('is-private'));
+  band.replaceChildren();
+  pub.forEach((card,i)=>{
+    const chip=document.createElement('a');chip.className='chip';chip.href='#'+card.id;chip.style.setProperty('--i',i);
+    chip.style.setProperty('--accent',getComputedStyle(card).getPropertyValue('--accent').trim());
+    chip.setAttribute('aria-label',nameOf(card));
+    const show=()=>{label.replaceChildren();const s=document.createElement('strong');s.textContent=nameOf(card);label.append(s,' '+infoFor(card).cat)};
+    chip.addEventListener('mouseenter',show);chip.addEventListener('focus',show);
+    chip.addEventListener('mouseleave',()=>label.textContent=def);chip.addEventListener('blur',()=>label.textContent=def);
+    chip.addEventListener('click',e=>{e.preventDefault();currentCat='All';applyFilters();card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});card.classList.add('flash');setTimeout(()=>card.classList.remove('flash'),1400)});
+    band.append(chip);
+  });
+    document.getElementById('appCountLine').textContent=`All ${pub.length} of them are live.`;
+}
+function renderFeatures(){
+  const box=document.getElementById('features');box.replaceChildren();
+  FEATURED.forEach(key=>{
+    const card=document.querySelector('main.grid > .card.'+key);if(!card)return;
+    const a=document.createElement('a');a.className='feature';a.href=card.href;a.target='_blank';a.rel='noopener';
+    a.style.setProperty('--accent',getComputedStyle(card).getPropertyValue('--accent').trim());
+    const art=document.createElement('div');art.className='feature-art';art.setAttribute('aria-hidden','true');
+    const g=document.createElement('span');g.textContent=card.querySelector('.card-glyph')?.textContent||'';art.append(g);
+    const copy=document.createElement('div');copy.className='feature-copy';
+    const h=document.createElement('h3');h.textContent=nameOf(card);
+    const p=document.createElement('p');p.textContent=card.querySelector('.card-desc')?.textContent||'';
+    const foot=document.createElement('div');foot.className='feature-foot';
+    const tag=document.createElement('span');tag.className='tag';tag.textContent=infoFor(card).cat;
+    const v=document.createElement('span');v.className='visit';v.textContent='Visit '+(domainOf(card.href)||'the app');
+    foot.append(tag,v);copy.append(h,p,foot);a.append(art,copy);box.append(a);
+  });
+}
+
+/* ---------- mode switching ---------- */
+function setMode(launcher,persist){
+  document.body.classList.toggle('launcher',launcher);
+  const btn=document.getElementById('modeToggle');
+  btn.textContent=launcher?'Portfolio':'Launcher';
+  btn.title=launcher?'Back to the public portfolio':"Switch to Nikki's private app launcher";
+  document.title=launcher?"Nikki's Toolbox":'Nikki Masani, product builder';
+  if(persist)safeSet(MODE_KEY,launcher?'launcher':'portfolio');
+  renderFilters();
+  if(launcher){tickClock();renderRecentApps()}
+  window.scrollTo(0,0);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  // Runs after cloudflare-apps.js (injected at the end of <body> in the Cloudflare build), so card links are final here.
+  enhanceCards();renderBand();renderFeatures();
+  const params=new URLSearchParams(location.search);
+  let launcher=safeGet(MODE_KEY)==='launcher';
+  if(params.has('launcher')){launcher=true;safeSet(MODE_KEY,'launcher')}
+  if(params.has('portfolio')){launcher=false;safeSet(MODE_KEY,'portfolio')}
+  setMode(launcher,false);
+  setInterval(()=>{if(isLauncher())tickClock()},30000);
+
+  document.getElementById('modeToggle').addEventListener('click',()=>setMode(!isLauncher(),true));
+  document.getElementById('appSearchInput').addEventListener('input',applyFilters);
+  document.getElementById('returnToLauncher').addEventListener('click',()=>document.getElementById('appWorkspace').classList.remove('has-tabs'));
+  cards().forEach(card=>card.addEventListener('click',e=>{
+    if(e.target.closest('.card-info-btn'))return;
+    if(isLauncher()){e.preventDefault();openApp(card)}
+  }));
+  document.addEventListener('keydown',e=>{
+    if(!isLauncher()||e.metaKey||e.ctrlKey||e.altKey||e.target.matches('input,textarea'))return;
+    const card=document.querySelector('.card[data-key="'+e.key+'"]');if(card)openApp(card);
+  });
+  const bar=document.querySelector('.topbar');
+  addEventListener('scroll',()=>bar.classList.toggle('scrolled',scrollY>8),{passive:true});
+});
+
+if('serviceWorker'in navigator&&location.protocol==='https:'){navigator.serviceWorker.addEventListener('controllerchange',()=>{if(window.__swReloading)return;window.__swReloading=true;window.location.reload()});navigator.serviceWorker.register('/sw.js').then(r=>{r.update().catch(()=>{});if(r.waiting)r.waiting.postMessage({type:'SKIP_WAITING'});r.addEventListener('updatefound',()=>{const i=r.installing;if(!i)return;i.addEventListener('statechange',()=>{if(i.state==='installed'&&navigator.serviceWorker.controller)i.postMessage({type:'SKIP_WAITING'})})})}).catch(()=>{})}
 </script>
 </body>
 </html>

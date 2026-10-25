@@ -1,8 +1,8 @@
 {
   "name": "Nikki's Toolbox",
   "short_name": "Toolbox",
-  "description": "One dashboard for all of Nikki's apps",
-  "start_url": "/",
+  "description": "Nikki Masani's apps: a public portfolio with a private launcher",
+  "start_url": "/?launcher=1",
   "display": "standalone",
   "background_color": "#0b0b10",
   "theme_color": "#0b0b10",
