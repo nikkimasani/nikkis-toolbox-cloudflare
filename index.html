@@ -213,7 +213,7 @@ body.launcher #projects .block-head{display:none}
     <p class="lede">I design, build, and ship web apps for real problems in my own work and life, from PMP exam prep and stakeholder comms to trading journals and digital planners. <span id="appCountLine">Every one of them is live.</span></p>
     <div class="band" aria-label="Every project, one color each">
       <div class="band-row" id="band"></div>
-      <div class="band-caption"><span id="bandLabel">Each color is one app. Point at one to see it.</span><span id="bandCount"></span></div>
+      <div class="band-caption"><span id="bandLabel"></span></div>
     </div>
   </section>
 
@@ -223,12 +223,12 @@ body.launcher #projects .block-head{display:none}
   </div>
 
   <section class="block portfolio-only" id="work" aria-labelledby="workTitle">
-    <div class="block-head"><h2 id="workTitle">Selected work</h2><p>Three projects that show the range: workplace tooling, data-heavy finance, and a hand-drawn creative app.</p></div>
+    <div class="block-head"><h2 id="workTitle">Selected work</h2></div>
     <div class="features" id="features"></div>
   </section>
 
   <section class="block" id="projects" aria-labelledby="projectsTitle">
-    <div class="block-head"><h2 id="projectsTitle">All projects</h2><p>Each one is a working app you can open right now.</p></div>
+    <div class="block-head"><h2 id="projectsTitle">All projects</h2></div>
     <section class="launcher-tools" aria-label="Launcher tools">
       <input id="appSearchInput" type="search" placeholder="Search apps, like career, reader, design, sports">
       <div class="recent-shell" id="recentApps"></div>
@@ -269,11 +269,6 @@ body.launcher #projects .block-head{display:none}
       <div class="about-copy">
         <p>Every app here started as something I needed. I scope the problem, design the experience, build it with modern AI coding tools, and ship it to a real URL, then keep iterating as I use it.</p>
         <p>That loop of defining what matters, cutting scope, and shipping something people can actually use is the same work whether the user is me or a whole team.</p>
-        <div class="facts">
-          <div class="fact"><b id="factCount">Live apps</b><span>Each one deployed and in use</span></div>
-          <div class="fact"><b>Vercel and Cloudflare</b><span>From single-file apps to full-stack Next.js</span></div>
-          <div class="fact"><b>Designed end to end</b><span>Product scope, UX, visual design, and build</span></div>
-        </div>
       </div>
     </div>
   </section>
@@ -389,9 +384,7 @@ function renderBand(){
     chip.addEventListener('click',e=>{e.preventDefault();currentCat='All';applyFilters();card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});card.classList.add('flash');setTimeout(()=>card.classList.remove('flash'),1400)});
     band.append(chip);
   });
-  document.getElementById('bandCount').textContent=pub.length+' apps';
-  document.getElementById('appCountLine').textContent=`All ${pub.length} of them are live.`;
-  document.getElementById('factCount').textContent=pub.length+' live apps';
+    document.getElementById('appCountLine').textContent=`All ${pub.length} of them are live.`;
 }
 function renderFeatures(){
   const box=document.getElementById('features');box.replaceChildren();
