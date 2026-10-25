@@ -46,3 +46,9 @@ Vercel deploys to production within ~30 seconds. (Manual fallback: `vercel --cwd
 1. Copy one of the `.card` blocks in `index.html` and update the name, description, link, and `data-key`.
 2. Add a per-app accent class (see `.card.tradelab` etc. in the CSS).
 3. Redeploy.
+
+## Portfolio and launcher modes
+
+The page opens as a public portfolio (intro, selected work, all projects by category, about). The **Launcher** button in the top bar switches to the private launcher (search, recent apps, in-page app tabs, number-key shortcuts); the choice is remembered on that device. `?launcher=1` and `?portfolio=1` force a mode, and the installed PWA opens straight into the launcher.
+
+When adding an app, also give it an entry in the `PORTFOLIO` map near the top of the script (its category, and `private: true` to keep it out of the public portfolio). `FEATURED` lists the three apps in Selected work. Private apps are only hidden from view, not secret: their links are still in the page source.

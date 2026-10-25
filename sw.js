@@ -1,4 +1,4 @@
-const CACHE_NAME = 'toolbox-v18';
+const CACHE_NAME = 'toolbox-portfolio-v1';
 
 const STATIC_ASSETS = [
   '/manifest.json',
