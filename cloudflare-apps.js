@@ -25,6 +25,9 @@ window.NIKKI_CLOUDFLARE_APPS = {
   wtm: { name: "WTM | What’s the Move", project: "wtm-whats-the-move-cloudflare", type: "pages-functions", plannedUrl: "https://wtm-whats-the-move-cloudflare.pages.dev", url: "https://wtm-whats-the-move-cloudflare.pages.dev", verified: true },
   meetingnotes: { name: "Said and Done", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true }
   // Stream Vault is not deployed on Cloudflare yet; its card keeps the Vercel URL in index.html.
+  // Downtown Eats: Cloudflare Pages project "downtown-eats-cloudflare" (repo nikkimasani-downtown-eats-cloudflare-) is not live yet;
+  // its card keeps the Vercel URL until it passes verification. Then add:
+  // downtowneats: { name: "Downtown Eats", project: "downtown-eats-cloudflare", type: "pages-functions", plannedUrl: "https://downtown-eats-cloudflare.pages.dev", url: "https://downtown-eats-cloudflare.pages.dev", verified: true },
   // AgVisualizer is not deployed on Cloudflare Pages yet; its card keeps the Vercel URL in index.html (its relay is a separate Cloudflare Worker).
 };
 
