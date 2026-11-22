@@ -378,7 +378,9 @@ function ensureTab(card){
 }
 function goToApp(appId){
   // One history entry while an app is showing, so the back button lands on Home.
-  if(!viewingApp()){if(history.state&&history.state.toolboxApp)history.replaceState({toolboxApp:true},'');else history.pushState({toolboxApp:true},'')}
+  // The entry records which app is showing, so Forward can bring it back after Back went Home.
+  const entry={toolboxApp:true,appId};
+  if(viewingApp()||(history.state&&history.state.toolboxApp))history.replaceState(entry,'');else history.pushState(entry,'');
   setActive(appId);
 }
 function showHome(){setActive(null)}
@@ -502,7 +504,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('modeToggle').addEventListener('click',()=>setMode(!isLauncher(),true));
   document.getElementById('appSearchInput').addEventListener('input',applyFilters);
   document.getElementById('appHome').addEventListener('click',showHome);
-  addEventListener('popstate',()=>{if(viewingApp())showHome()});
+  addEventListener('popstate',e=>{
+    const id=e.state&&e.state.toolboxApp&&e.state.appId;
+    if(id&&document.querySelector(`#appTabs .app-tab[data-app-id="${id}"]`))setActive(id);else showHome();
+  });
   restoreOpenTabs();
   cards().forEach(card=>card.addEventListener('click',e=>{
     if(e.target.closest('.card-info-btn')||!plainClick(e))return;
