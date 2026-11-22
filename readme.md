@@ -61,4 +61,4 @@ When adding an app, also give it an entry in the `PORTFOLIO` map near the top of
 
 Clicking an app (in either mode) opens it as a tab in a bar across the top of the page. You can keep several open and switch between them; **Home** returns to the page with every tab still open, and the ↗ button opens the current app in its own browser tab. The back button steps back inside the app first, then returns Home instead of leaving the toolbox. Open tabs are remembered until the browser tab is closed.
 
-Apps marked `data-open="newtab"` on their card (they have sign-in, drawing, or touch problems when embedded) and plain-http apps still open in their own browser tab.
+Every app opens as a tab. A card can opt out with `data-open="newtab"` to open in its own browser tab instead (useful if an app's sign-in, drawing, or touch input misbehaves when embedded). Plain-http apps, like Open Design on the home network, always open in their own browser tab because browsers block them inside an https page.
