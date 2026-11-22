@@ -56,3 +56,9 @@ App cards are switched from their Vercel URLs to Cloudflare URLs one at a time, 
 The page opens as a public portfolio (intro, selected work, all projects by category, about). The **Launcher** button in the top bar switches to the private launcher (search, recent apps, in-page app tabs, number-key shortcuts); the choice is remembered on that device. `?launcher=1` and `?portfolio=1` force a mode, and the installed PWA opens straight into the launcher.
 
 When adding an app, also give it an entry in the `PORTFOLIO` map near the top of the script (its category, and `private: true` to keep it out of the public portfolio). `FEATURED` lists the three apps in Selected work. Private apps are only hidden from view, not secret: their links are still in the page source.
+
+## Open-app tabs
+
+Clicking an app (in either mode) opens it as a tab in a bar across the top of the page. You can keep several open and switch between them; **Home** returns to the page with every tab still open, and the ↗ button opens the current app in its own browser tab. The back button steps back inside the app first, then returns Home instead of leaving the toolbox. Open tabs are remembered until the browser tab is closed.
+
+Apps marked `data-open="newtab"` on their card (they have sign-in, drawing, or touch problems when embedded) and plain-http apps still open in their own browser tab.

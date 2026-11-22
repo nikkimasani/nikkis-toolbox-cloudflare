@@ -152,19 +152,38 @@ body.launcher .launcher-tools{display:grid}
 .private-pill{font-size:12px;color:var(--muted);margin-left:6px}
 body.launcher #projects{border-top:0;padding-top:0}
 body.launcher #projects .block-head{display:none}
-.app-workspace{display:none;position:fixed;inset:0;z-index:20;background:var(--surface)}
-.app-workspace.has-tabs{display:flex;flex-direction:column}
-.app-tab-list{display:flex;gap:6px;overflow-x:auto;min-height:58px;padding:10px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left));border-bottom:1px solid var(--rule);background:var(--paper)}
-.app-tab-home,.app-tab{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);font:inherit;font-size:13px;cursor:pointer;max-width:220px}
-.app-tab-home{border-color:var(--rule);color:var(--ink)}
-.app-tab.is-active{background:var(--surface);border-color:var(--rule);color:var(--ink)}
-.app-tab-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.app-tab-close{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px}
-.app-tab-close:hover{background:var(--rule)}
-#appTabPanels{flex:1;min-height:0}
-.app-panel{width:100%;height:100%;background:#fff}
+/* ---------- open-app tabs (both modes) ---------- */
+:root{--barh:calc(54px + env(safe-area-inset-top))}
+.app-bar{position:fixed;top:0;left:0;right:0;z-index:30;height:var(--barh);padding:env(safe-area-inset-top) max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));display:none;align-items:center;gap:6px;background:var(--surface);border-bottom:1px solid var(--rule)}
+body.has-tabs .app-bar{display:flex}
+body.has-tabs{padding-top:var(--barh)}
+body.has-tabs .topbar{top:var(--barh)}
+.app-home,.app-tab-open,.app-pop{font:inherit;font-size:14px;font-weight:500;color:var(--muted);background:transparent;border:1px solid transparent;border-radius:10px;height:40px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;text-decoration:none;white-space:nowrap}
+.app-home{flex:0 0 auto;padding:0 12px 0 10px}
+.app-home svg,.app-pop svg{width:18px;height:18px;flex:0 0 auto}
+.app-home[aria-selected="true"]{color:var(--ink);background:var(--paper);border-color:var(--rule)}
+.app-tabs{flex:1;min-width:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-left:6px;border-left:1px solid var(--rule)}
+.app-tabs::-webkit-scrollbar{display:none}
+.app-tab{flex:0 0 auto;display:flex;align-items:center;border-radius:10px;border:1px solid transparent;position:relative}
+.app-tab-open{padding:0 4px 0 10px;max-width:190px;border:0}
+.app-tab-glyph{font-size:16px;line-height:1}
+.app-tab-label{overflow:hidden;text-overflow:ellipsis}
+.app-tab-close{font:inherit;font-size:18px;line-height:1;color:var(--faint);background:transparent;border:0;border-radius:7px;width:28px;height:28px;margin-right:5px;cursor:pointer;display:grid;place-items:center}
+.app-tab-close:hover{background:var(--rule);color:var(--ink)}
+.app-tab.is-active{background:var(--paper);border-color:var(--rule)}
+.app-tab.is-active::after{content:'';position:absolute;left:10px;right:10px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--accent)}
+.app-tab.is-active .app-tab-open{color:var(--ink)}
+.app-tab-open:hover,.app-home:hover{color:var(--ink)}
+.app-pop{flex:0 0 auto;width:40px;justify-content:center}
+.app-pop:hover{color:var(--ink);border-color:var(--rule)}
+.app-pop[hidden]{display:none}
+.app-panels{display:none;position:fixed;left:0;right:0;bottom:0;top:var(--barh);z-index:29;background:var(--surface)}
+body.viewing-app .app-panels{display:block}
+body.viewing-app{overflow:hidden}
+.app-panel{position:absolute;inset:0;background:#fff}
 .app-panel[hidden]{display:none}
 .app-panel iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:560px){.app-home .app-home-label{display:none}.app-home{padding:0 10px}.app-tab-open{max-width:132px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 <style>
@@ -197,6 +216,12 @@ body.launcher #projects .block-head{display:none}
 </style>
 </head>
 <body>
+<div class="app-bar" id="appBar">
+  <button class="app-home" id="appHome" type="button" role="tab" aria-selected="true" title="Back to the home page (your open apps stay open)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span class="app-home-label">Home</span></button>
+  <div class="app-tabs" id="appTabs" role="tablist" aria-label="Open apps"></div>
+  <a class="app-pop" id="appPop" href="#" target="_blank" rel="noopener" title="Open this app in its own browser tab" aria-label="Open this app in its own browser tab" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></a>
+</div>
+<div class="app-panels" id="appPanels"></div>
 <header class="topbar"><div class="wrap">
   <a class="monogram" href="#top" aria-label="Nikki Masani, back to top">NM</a>
   <nav class="nav" aria-label="Main">
@@ -235,7 +260,6 @@ body.launcher #projects .block-head{display:none}
       <div class="recent-shell" id="recentApps"></div>
     </section>
     <div class="filters" id="filters" role="group" aria-label="Filter projects by category"></div>
-    <section class="app-workspace" id="appWorkspace" aria-label="Open apps"><div class="app-tab-list" id="appTabList" role="tablist" aria-label="Open apps"><button class="app-tab-home" id="returnToLauncher" type="button">Back to apps</button></div><div id="appTabPanels"></div></section>
 <main class="grid" aria-label="Projects">
 <a class="card tradelab" href="https://tradelab-cloudflare.pages.dev" data-key="1" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 01</span><span class="card-glyph">📈</span></div><div class="card-body"><div class="card-name">Nikki's TradeLab</div><p class="card-desc">Charts, position calculator, P&amp;L journal, paper trading, live news, and market classroom — all in one lab.</p><span class="card-cta">Open TradeLab <span class="arrow">→</span></span></div></a>
 <a class="card booknook" href="https://reader-hub-cloudflare.pages.dev" data-key="2" target="_blank" rel="noopener"><div class="card-top"><span class="card-num">No. 02</span><span class="card-glyph">📚</span></div><div class="card-body"><div class="card-name">The Book Nook</div><p class="card-desc">A quiet reading sanctuary with shelves, an EPUB reader, and the shared book club.</p><span class="card-cta">Open Book Nook <span class="arrow">→</span></span></div></a>
@@ -311,24 +335,70 @@ function safeSet(k,v){try{localStorage.setItem(k,v)}catch{}}
 function readRecentApps(){try{const p=JSON.parse(safeGet(TOOLBOX_RECENT_KEY)||'[]');return Array.isArray(p)?p:[]}catch{return[]}}
 function writeRecentApp(card){const next=readRecentApps().filter(i=>i.href!==card.href);next.unshift({href:card.href,name:nameOf(card)});safeSet(TOOLBOX_RECENT_KEY,JSON.stringify(next.slice(0,3)));renderRecentApps()}
 function renderRecentApps(){const shell=document.getElementById('recentApps');const recent=readRecentApps();shell.replaceChildren();if(!recent.length){const s=document.createElement('span');s.className='recent-pill';s.textContent='No recent apps yet';shell.append(s);return}recent.forEach(item=>{const card=cards().find(c=>c.href===item.href);const a=document.createElement('a');a.className='recent-pill';a.href=item.href;a.target='_blank';a.rel='noopener';a.textContent='Recent: '+(card?nameOf(card):item.name);shell.append(a)})}
+/* ---------- open-app tabs ---------- */
+// Apps open as tabs inside this page. Home keeps them open; the back button returns Home instead of leaving.
+// Cards marked data-open="newtab" (sign-in, drawing, or touch issues when embedded) and plain-http apps open in a real browser tab.
+const OPEN_TABS_KEY='toolbox-open-tabs-v1';
+const FRAME_ALLOW='microphone; camera; geolocation; clipboard-read; clipboard-write; fullscreen; autoplay; encrypted-media; picture-in-picture; screen-wake-lock';
 function appIdFor(card){return`app-${card.href.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')}`}
-function activateApp(appId){document.querySelectorAll('.app-tab').forEach(t=>{const a=t.dataset.appId===appId;t.classList.toggle('is-active',a);t.setAttribute('aria-selected',String(a))});document.querySelectorAll('.app-panel').forEach(p=>{p.hidden=p.id!==`${appId}-panel`})}
-function closeApp(appId){const tab=document.querySelector(`.app-tab[data-app-id="${appId}"]`);const panel=document.getElementById(`${appId}-panel`);const was=tab?.classList.contains('is-active');tab?.remove();panel?.remove();const rest=document.querySelectorAll('.app-tab');document.getElementById('appWorkspace').classList.toggle('has-tabs',rest.length>0);if(was&&rest.length)activateApp(rest[rest.length-1].dataset.appId)}
+function cardForId(id){return cards().find(c=>appIdFor(c)===id)}
+function opensOutside(card){return card.dataset.open==='newtab'||!card.href||(card.href.startsWith('http:')&&location.protocol==='https:')}
+function viewingApp(){return document.body.classList.contains('viewing-app')}
+function openTabIds(){return [...document.querySelectorAll('#appTabs .app-tab')].map(t=>t.dataset.appId)}
+function saveOpenTabs(){try{sessionStorage.setItem(OPEN_TABS_KEY,JSON.stringify(openTabIds()))}catch{}}
+function setActive(appId){
+  document.body.classList.toggle('viewing-app',!!appId);
+  document.getElementById('appHome').setAttribute('aria-selected',String(!appId));
+  document.querySelectorAll('#appTabs .app-tab').forEach(t=>{const on=t.dataset.appId===appId;t.classList.toggle('is-active',on);t.querySelector('.app-tab-open').setAttribute('aria-selected',String(on))});
+  document.querySelectorAll('#appPanels .app-panel').forEach(p=>{p.hidden=p.dataset.appId!==appId});
+  const pop=document.getElementById('appPop');
+  if(!appId){pop.hidden=true;return}
+  const card=cardForId(appId);const panel=document.querySelector(`#appPanels .app-panel[data-app-id="${appId}"]`);
+  if(panel&&!panel.querySelector('iframe')){const f=document.createElement('iframe');f.src=card.href;f.title=nameOf(card);f.setAttribute('allow',FRAME_ALLOW);f.setAttribute('allowfullscreen','');panel.append(f)}
+  pop.href=card.href;pop.hidden=false;
+  document.querySelector(`#appTabs .app-tab[data-app-id="${appId}"]`)?.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+function ensureTab(card){
+  const appId=appIdFor(card);
+  if(document.querySelector(`#appTabs .app-tab[data-app-id="${appId}"]`))return appId;
+  const name=nameOf(card);
+  const tab=document.createElement('div');tab.className='app-tab';tab.dataset.appId=appId;
+  tab.style.setProperty('--accent',getComputedStyle(card).getPropertyValue('--accent').trim());
+  const open=document.createElement('button');open.type='button';open.className='app-tab-open';open.setAttribute('role','tab');open.setAttribute('aria-selected','false');open.title=name;
+  const glyph=document.createElement('span');glyph.className='app-tab-glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent=card.querySelector('.card-glyph')?.textContent||'';
+  const label=document.createElement('span');label.className='app-tab-label';label.textContent=name;
+  open.append(glyph,label);open.addEventListener('click',()=>goToApp(appId));
+  const close=document.createElement('button');close.type='button';close.className='app-tab-close';close.textContent='×';close.setAttribute('aria-label','Close '+name);
+  close.addEventListener('click',()=>closeApp(appId));
+  tab.append(open,close);document.getElementById('appTabs').append(tab);
+  const panel=document.createElement('div');panel.className='app-panel';panel.dataset.appId=appId;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-label',name);panel.hidden=true;
+  document.getElementById('appPanels').append(panel);
+  document.body.classList.add('has-tabs');
+  return appId;
+}
+function goToApp(appId){
+  // One history entry while an app is showing, so the back button lands on Home.
+  if(!viewingApp()){if(history.state&&history.state.toolboxApp)history.replaceState({toolboxApp:true},'');else history.pushState({toolboxApp:true},'')}
+  setActive(appId);
+}
+function showHome(){setActive(null)}
 function openApp(card){
   writeRecentApp(card);
-  if(card.dataset.open==='newtab'||!card.href){window.open(card.href,'_blank','noopener');return}
-  const appId=appIdFor(card);
-  if(document.querySelector(`.app-tab[data-app-id="${appId}"]`)){activateApp(appId);document.getElementById('appWorkspace').classList.add('has-tabs');return}
-  const name=nameOf(card);
-  const tab=document.createElement('button');tab.className='app-tab';tab.type='button';tab.dataset.appId=appId;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',`${appId}-panel`);
-  tab.innerHTML='<span class="app-tab-label"></span><span class="app-tab-close" role="button">×</span>';
-  tab.querySelector('.app-tab-label').textContent=name;tab.querySelector('.app-tab-close').setAttribute('aria-label','Close '+name);
-  tab.addEventListener('click',e=>{if(e.target.closest('.app-tab-close')){closeApp(appId);return}activateApp(appId)});
-  const panel=document.createElement('div');panel.className='app-panel';panel.id=`${appId}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-label',name);
-  const frame=document.createElement('iframe');frame.src=card.href;frame.title=name;panel.append(frame);
-  document.getElementById('appTabList').append(tab);document.getElementById('appTabPanels').append(panel);
-  document.getElementById('appWorkspace').classList.add('has-tabs');activateApp(appId);
+  if(opensOutside(card)){window.open(card.href,'_blank','noopener');return}
+  goToApp(ensureTab(card));saveOpenTabs();
 }
+function closeApp(appId){
+  const tab=document.querySelector(`#appTabs .app-tab[data-app-id="${appId}"]`);const was=tab?.classList.contains('is-active');
+  tab?.remove();document.querySelector(`#appPanels .app-panel[data-app-id="${appId}"]`)?.remove();
+  const rest=openTabIds();document.body.classList.toggle('has-tabs',rest.length>0);
+  if(!rest.length)showHome();else if(was)setActive(rest[rest.length-1]);
+  saveOpenTabs();
+}
+function restoreOpenTabs(){
+  let ids=[];try{ids=JSON.parse(sessionStorage.getItem(OPEN_TABS_KEY)||'[]')}catch{}
+  if(Array.isArray(ids))ids.forEach(id=>{const c=cardForId(id);if(c&&!opensOutside(c))ensureTab(c)});
+}
+function plainClick(e){return e.button===0&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey}
 function tickClock(){const now=new Date();document.getElementById('clock').textContent=now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});document.getElementById('date-line').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}
 
 /* ---------- filtering ---------- */
@@ -431,12 +501,23 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   document.getElementById('modeToggle').addEventListener('click',()=>setMode(!isLauncher(),true));
   document.getElementById('appSearchInput').addEventListener('input',applyFilters);
-  document.getElementById('returnToLauncher').addEventListener('click',()=>document.getElementById('appWorkspace').classList.remove('has-tabs'));
+  document.getElementById('appHome').addEventListener('click',showHome);
+  addEventListener('popstate',()=>{if(viewingApp())showHome()});
+  restoreOpenTabs();
   cards().forEach(card=>card.addEventListener('click',e=>{
-    if(e.target.closest('.card-info-btn'))return;
-    if(isLauncher()){e.preventDefault();openApp(card)}
+    if(e.target.closest('.card-info-btn')||!plainClick(e))return;
+    e.preventDefault();openApp(card);
   }));
+  document.getElementById('features').addEventListener('click',e=>{
+    const a=e.target.closest('a.feature');if(!a||!plainClick(e))return;
+    const card=cards().find(c=>c.href===a.href);if(card){e.preventDefault();openApp(card)}
+  });
+  document.getElementById('recentApps').addEventListener('click',e=>{
+    const a=e.target.closest('a.recent-pill');if(!a||!plainClick(e))return;
+    const card=cards().find(c=>c.href===a.href);if(card){e.preventDefault();openApp(card)}
+  });
   document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&viewingApp()){showHome();return}
     if(!isLauncher()||e.metaKey||e.ctrlKey||e.altKey||e.target.matches('input,textarea'))return;
     const card=document.querySelector('.card[data-key="'+e.key+'"]');if(card)openApp(card);
   });
