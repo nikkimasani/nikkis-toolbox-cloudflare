@@ -65,9 +65,9 @@
   const name = card?.querySelector('.card-name');
   const description = card?.querySelector('.card-desc');
   const cta = card?.querySelector('.card-cta');
-  if (name) name.textContent = 'Said and Done';
-  if (description) description.textContent = 'Turn conversations into transcripts, summaries, decisions, and clear action items.';
-  if (cta) cta.innerHTML = 'Open Said and Done <span class="arrow">→</span>';
+  if (name) name.textContent = 'Recapp';
+  if (description) description.textContent = 'Record in the room or send a notetaker to Zoom, Meet and Teams — live transcript, summary, action items, insights and AI chat.';
+  if (cta) cta.innerHTML = 'Open Recapp <span class="arrow">→</span>';
 }
 function tickClock(){const now=new Date();document.getElementById('clock').textContent=now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});document.getElementById('date-line').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}tickClock();setInterval(tickClock,30000);
 document.addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;const card=document.querySelector('.card[data-key="'+e.key+'"]');if(card)openApp(card)});

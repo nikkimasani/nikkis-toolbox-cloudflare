@@ -23,7 +23,7 @@ window.NIKKI_CLOUDFLARE_APPS = {
   picommand: { name: "Pi Command Center", project: "pi-command-center-cloudflare", type: "pages", plannedUrl: "https://pi-command-center-cloudflare.pages.dev", url: "https://pi-command-center-cloudflare.pages.dev", verified: true },
   hobonichi: { name: "Hobonichi Planner", project: "hobonichi-planner-cloudflare", type: "pages", plannedUrl: "https://hobonichi-planner-cloudflare.pages.dev", url: "https://hobonichi-planner-cloudflare.pages.dev", verified: true },
   wtm: { name: "WTM | What’s the Move", project: "wtm-whats-the-move-cloudflare", type: "pages-functions", plannedUrl: "https://wtm-whats-the-move-cloudflare.pages.dev", url: "https://wtm-whats-the-move-cloudflare.pages.dev", verified: true },
-  meetingnotes: { name: "Said and Done", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true }
+  meetingnotes: { name: "Recapp", project: "meeting-notes-cloudflare", type: "pages", plannedUrl: "https://meeting-notes-cloudflare.pages.dev", url: "https://meeting-notes-cloudflare.pages.dev", verified: true }
   // Stream Vault is not deployed on Cloudflare yet; its card keeps the Vercel URL in index.html.
   // Downtown Eats: Cloudflare Pages project "downtown-eats-cloudflare" (repo nikkimasani-downtown-eats-cloudflare-) is not live yet;
   // its card keeps the Vercel URL until it passes verification. Then add:
