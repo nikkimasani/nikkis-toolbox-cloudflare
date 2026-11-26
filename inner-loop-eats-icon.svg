@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#f6ecdc"/>
+  <!-- the 610 Loop, drawn a little uneven on purpose -->
+  <path d="M258 96C350 92 420 158 418 252C416 349 352 418 252 417C158 416 93 350 95 258C97 166 163 99 258 96Z" fill="none" stroke="#d9481e" stroke-width="34" stroke-linejoin="round"/>
+  <path d="M258 96C350 92 420 158 418 252C416 349 352 418 252 417C158 416 93 350 95 258C97 166 163 99 258 96Z" fill="none" stroke="#f6ecdc" stroke-width="4" stroke-dasharray="16 14" stroke-linecap="round"/>
+  <!-- downtown star, a touch east of center like the real map -->
+  <path d="M338 168l8.5 17.4 19.2 2.8-13.9 13.5 3.3 19.1-17.1-9-17.1 9 3.3-19.1-13.9-13.5 19.2-2.8z" fill="#d9481e"/>
+  <!-- fork: red ink printed slightly off from the dark ink -->
+  <g transform="translate(0 -10) rotate(-11 256 270)">
+    <g fill="#d9481e" transform="translate(7 6)">
+      <rect x="214" y="140" width="15" height="78" rx="7.5"/><rect x="236.5" y="140" width="15" height="78" rx="7.5"/>
+      <rect x="259" y="140" width="15" height="78" rx="7.5"/><rect x="281.5" y="140" width="15" height="78" rx="7.5"/>
+      <path d="M214 204H296.5V216C296.5 241 283 257 269 263H242C228 257 214 241 214 216Z"/>
+      <rect x="242" y="250" width="27" height="148" rx="13.5"/>
+    </g>
+    <g fill="#2b211b">
+      <rect x="214" y="140" width="15" height="78" rx="7.5"/><rect x="236.5" y="140" width="15" height="78" rx="7.5"/>
+      <rect x="259" y="140" width="15" height="78" rx="7.5"/><rect x="281.5" y="140" width="15" height="78" rx="7.5"/>
+      <path d="M214 204H296.5V216C296.5 241 283 257 269 263H242C228 257 214 241 214 216Z"/>
+      <rect x="242" y="250" width="27" height="148" rx="13.5"/>
+    </g>
+  </g>
+</svg>
